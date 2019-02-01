@@ -1,0 +1,46 @@
+body{
+    background-image: url("cesarphoto.jpg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+main h1 {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: bisque;
+}
+
+h2{
+    display: flex;
+    text-transform: uppercase;
+    color: beige;
+    
+}
+
+.conteudo{
+    color: beige;
+
+}
+
+.code, .decode {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 30% ;
+    padding: 25px;
+    vertical-align: top;
+}
+
+.resultadoCifra {
+    display: inline; 
+    float: left; 
+    width: 50% ;
+    height: 50%;
+    padding: 5px;
+    vertical-align: top;
+    color: bisque;
+
+}

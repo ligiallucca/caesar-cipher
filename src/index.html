@@ -6,8 +6,62 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script src="cipher.js"></script>
-    <script src="index.js"></script>
+    <main>
+      <H1 class="maintittle">Cifra de César!</H1>
+
+      <div class="code">
+        <form>
+          <H2 class=leftH2>Codificar</H2>
+  
+          <p for="sentenceOriginal" class="conteudo">
+            Insira a frase que gostaria de codificar:
+          </p>
+          <p>
+            <input autofocus type="input" id="sentenceOriginal" class="btn">
+          </p>
+  
+          <p class="conteudo">
+            Insira o deslocamento a ser utilizado:
+          </p>
+          <p>
+            <input type="input" id="offset" class="btn">
+          </p>
+  
+          <p>
+            <input type="button" id="sendOffset" value="enviar" class="btn" Onclick="result()">
+          </p>
+        </form>
+  
+        <div class="resultadoCifra">
+          <p id="mostraCifra"></p>
+        </div>
+      </div>
+
+      <div class="decode">
+        <form>
+          <H2 class=rightH2>Decodificar</H2>
+  
+          <p class="conteudo">
+            Insira a frase que gostaria de decodificar:
+          </p>
+          <p>
+            <input autofocus type="input" id="sentenceOriginal" class="btn">
+          </p>
+  
+          <p class="conteudo">
+            Insira o deslocamento a ser utilizado:
+          </p>
+          <p>
+            <input autofocus type="input" id="offset" class="btn">
+          </p>
+          <p>
+            <input type="button" id="sendOffset" value="enviar"  class="btn">
+          </p>
+        </form>
+      </div>
+
+      <script src="cipher.js"></script>
+      <script src="tests.js"></script>
+    </main>
   </body>
 </html>
