@@ -1,67 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Cifra de César!</title>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <main>
-      <H1 class="maintittle">Cifra de César!</H1>
+      <h1>Cifra de César!</h1>
+      <div class="maindiv">
+        <h2>O que é?</h2>
+        <p class="content">Conta a história que Júlio César utilizava um código nas mensagens enviadas
+        a seus generais, um sistema simples de substituição, no qual cada letra da mensagem original era trocada
+        pela letra que se situa três posições à sua frente. </p>
+        <h2>Vamos testar?</h2>
+      <form class="formulario" id="cypherForm">
+        <fieldset>
+          <legend>Digite as informações necessárias</legend>
 
-      <div class="code">
-        <form>
-          <H2 class=leftH2>Codificar</H2>
-  
-          <p for="sentenceOriginal" class="conteudo">
-            Insira a frase que gostaria de codificar:
-          </p>
-          <p>
-            <input autofocus type="input" id="sentenceOriginal" class="btn">
-          </p>
-  
-          <p class="conteudo">
-            Insira o deslocamento a ser utilizado:
-          </p>
-          <p>
-            <input type="input" id="offset" class="btn">
-          </p>
-  
-          <p>
-            <input type="button" id="sendOffset" value="enviar" class="btn" Onclick="result()">
-          </p>
-        </form>
-  
-        <div class="resultadoCifra">
-          <p id="mostraCifra"></p>
-        </div>
-      </div>
+          <label for="sentence">Frase a ser utilizada:</label>
+          <input type="text" name="sentence" id="sentence" placeholder="Digite sua frase aqui" autofocus required>
 
-      <div class="decode">
-        <form>
-          <H2 class=rightH2>Decodificar</H2>
-  
-          <p class="conteudo">
-            Insira a frase que gostaria de decodificar:
-          </p>
-          <p>
-            <input autofocus type="input" id="sentenceOriginal" class="btn">
-          </p>
-  
-          <p class="conteudo">
-            Insira o deslocamento a ser utilizado:
-          </p>
-          <p>
-            <input autofocus type="input" id="offset" class="btn">
-          </p>
-          <p>
-            <input type="button" id="sendOffset" value="enviar"  class="btn">
-          </p>
-        </form>
-      </div>
+          <label for="offset">Chave a ser utilizada:</label>
+          <input type="text" name="offset" id="offset" placeholder="Digite o número da chave a ser utilizada"  required>
 
+          <label for="decision">O que deseja fazer?</label>
+          <input type="radio" name="decision" value="encode" id="code">
+              Codificar
+          </input>
+          <input type="radio" name="decision" value="decode" id="decode">
+              Decodificar
+          </input>
+
+          <button type="button" name="button" form="cypherForm" id=button onclick="showResult()" >
+            Enviar
+          </button>
+        </fieldset>
+      </form>
+      <h2 class="content" id ="result"></h2>
       <script src="cipher.js"></script>
       <script src="tests.js"></script>
     </main>
   </body>
-</html>
+  </html>
