@@ -1,13 +1,22 @@
+function showResult() {
+  document.getElementById("result").innerHTML=result();
+}
+
+function result(){
+  let form = getFormData();
+  let cypher = getCypher(form.decision, form.sentence, form.offset);
+  let result = setStringFromArray(cypher);
+
+  return result;
+}
 
 function getFormData(){
   let form = document.getElementById("cypherForm");
-
   let formData={
     sentence: form.elements["sentence"].value,
     offset: parseInt(form.elements["offset"].value),
     decision: form.elements["decision"].value
   }
-
   return formData;
 }
 
@@ -15,8 +24,7 @@ function getCharCodesArray(sentence) {
   let charCodesArray = [];
   for(let index in sentence) {
     charCodesArray.push(
-      sentence.charCodeAt(index)
-    );
+      sentence.charCodeAt(index));
   }
   return charCodesArray;
 }
@@ -24,7 +32,6 @@ function getCharCodesArray(sentence) {
 function isCharUppercase (charCodeItem) {
   let charCodeA = 65;
   let charCodeZ = 90;
-
   if (charCodeItem >= charCodeA && charCodeItem <= charCodeZ) {
       return true;
   }
@@ -43,7 +50,6 @@ function isCharLowercase (charCodeItem) {
 function encodeArray(sentence, offset) {
   let charCodesArray = getCharCodesArray(sentence);
   let encodedArray = [];
-
   for (let code of charCodesArray) {
     if (isCharUppercase(code)) {
       encodedArray.push((((code - 65) + offset) % 26) + 65);
@@ -53,14 +59,12 @@ function encodeArray(sentence, offset) {
       encodedArray.push(code);
     }
   }
-
   return encodedArray;
 }
 
 function decodeArray(sentence, offset) {
   let charCodesArray = getCharCodesArray(sentence);
   let decodedArray = [];
-
   for (let code of charCodesArray) {
     if (isCharUppercase(code)) {
       decodedArray.push((((code - 90) - offset) % 26) + 90);
@@ -75,37 +79,22 @@ function decodeArray(sentence, offset) {
 
 function getCypher(decision, sentence, offset) {
   let cypher = [];
-
   if (decision === "encode") {
     cypher = encodeArray(sentence, offset);
   } else {
     cypher = decodeArray(sentence, offset);
   }
-
   return cypher;
 }
 
 function setStringFromArray(array){
   let result = "";
-
   for (let counter=0; counter <array.length; counter++) {
     result = result + String.fromCharCode(array[counter]);
   }
-
   return result;
 }
 
-function result(){
-  let form = getFormData();
-  let cypher = getCypher(form.decision, form.sentence, form.offset);
-  let result = setStringFromArray(cypher);
-
-  return result;
-}
-
-function showResult() {
-
-  document.getElementById("result").innerHTML=result();
 
 
-}
+
