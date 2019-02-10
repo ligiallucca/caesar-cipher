@@ -6,38 +6,43 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <main>
+    <header>
       <h1>Cifra de César!</h1>
-      <div class="maindiv">
+    </header>
+      <main>
         <h2>O que é?</h2>
-        <p class="content">Conta a história que Júlio César utilizava um código nas mensagens enviadas
-        a seus generais, um sistema simples de substituição, no qual cada letra da mensagem original era trocada
-        pela letra que se situa três posições à sua frente. </p>
+        <section class = "content">
+          <p>Conta a história que Júlio César utilizava um código nas mensagens enviadas
+          a seus generais, um sistema simples de substituição, no qual cada letra da mensagem original era trocada
+          pela letra que se situa três posições à sua frente. </p>
+        </section>
         <h2>Vamos testar?</h2>
-      <form class="formulario" id="cypherForm">
-        <fieldset>
-          <legend>Digite as informações necessárias</legend>
+        <form class="formulario" id="cypherForm">
+          <fieldset>
+            <legend>Digite as informações necessárias</legend>
 
-          <label for="sentence">Frase a ser utilizada:</label>
-          <input type="text" name="sentence" id="sentence" placeholder="Digite sua frase aqui" autofocus required>
+            <label for="sentence">Frase a ser utilizada:</label>
+            <input type="text" name="sentence" id="sentence" placeholder="Digite sua frase aqui" autofocus required>
 
-          <label for="offset">Chave a ser utilizada:</label>
-          <input type="text" name="offset" id="offset" placeholder="Digite o número da chave a ser utilizada"  required>
+            <label for="offset">Chave a ser utilizada:</label>
+            <input type="text" name="offset" id="offset" placeholder="Digite o número da chave a ser utilizada"  required>
 
-          <label for="decision">O que deseja fazer?</label>
-          <input type="radio" name="decision" value="encode" id="code">
-              Codificar
-          </input>
-          <input type="radio" name="decision" value="decode" id="decode">
-              Decodificar
-          </input>
+            <label for="decision">O que deseja fazer?</label>
+            <input type="radio" name="decision" value="encode" id="code">
+                Codificar
+            </input>
+            <input type="radio" name="decision" value="decode" id="decode">
+                Decodificar
+            </input>
 
-          <button type="button" name="button" form="cypherForm" id=button onclick="showResult()" >
-            Enviar
-          </button>
-        </fieldset>
-      </form>
-      <p class="result-on-screen" id="result"></p>
+            <button type="button" name="button" form="cypherForm" id=button onclick="showResult()" >
+              Enviar
+            </button>
+          </fieldset>
+        </form>
+        <section class = "result">
+          <p id="result"></p>
+        </section>
       <script src="cipher.js"></script>
       <script src="tests.js"></script>
     </main>
